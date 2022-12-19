@@ -9,7 +9,7 @@ const [orders,serOrders]=useState([])
 
 
 useEffect(()=>{
-    fetch(`http://localhost:5000/orders?email=${user?.email}`)
+    fetch(`https://y-five-livid.vercel.app/orders?email=${user?.email}`)
     .then(res=>res.json())
     .then(data=>{
         serOrders(data)
@@ -21,7 +21,7 @@ useEffect(()=>{
 
 
 const handleDelete=(id)=>{
-    fetch(`http://localhost:5000/orders/${id}`,{
+    fetch(`https://y-five-livid.vercel.app/orders/${id}`,{
         method: 'DELETE'
     }).then(res=>res.json())
     .then(data=>{
@@ -40,7 +40,7 @@ const handleDelete=(id)=>{
 
 
 const handleuptgrade=(id)=>{
-    fetch(`http://localhost:5000/orders/${id}`,{
+    fetch(`https://y-five-livid.vercel.app/orders/${id}`,{
         method: 'PATCH',
         headers:{
             'Content-Type': 'application/json'
@@ -59,7 +59,7 @@ const handleuptgrade=(id)=>{
            const upd=orders.find(odr=>odr._id===id)
            upd.status='APPROVED'
          
-           const newrodrs=[...upd,remeningUpd]
+           const newrodrs=[...remeningUpd,upd]
            serOrders(newrodrs)
         
         }

@@ -34,12 +34,12 @@ const router=createBrowserRouter([
             {
                 path:"/cardettails/:id",
                 element:<Private><CarDittails></CarDittails></Private>,
-                loader:({params})=>fetch(`http://localhost:5000/cars/${params.id}`)
+                loader:({params})=>fetch(`https://y-five-livid.vercel.app/cars/${params.id}`)
             },
             {
                 path:"/order/:id",
                 element:<Private><Order></Order></Private>,
-                loader:({params})=>fetch(`http://localhost:5000/cars/${params.id}`)
+                loader:({params})=>fetch(`https://y-five-livid.vercel.app/cars/${params.id}`)
             },
             {
                 path:"/orders",
