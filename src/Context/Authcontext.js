@@ -1,5 +1,5 @@
 import React, { createContext, useEffect, useState } from 'react';
-import {  createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut }from "firebase/auth"
+import {  createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile }from "firebase/auth"
 import app  from "../Firebase-confige/FirebaseConfig"
 
 
@@ -27,6 +27,14 @@ const googleLogin=(probaider)=>{
     return signInWithPopup(auth,probaider)
 }
 
+const uptadeteuser = (userinfo) => {
+  return  updateProfile(auth.currentUser, userinfo);
+};
+
+
+
+
+
 const logout=()=>{
     setLoding(true)
     return signOut(auth)
@@ -46,15 +54,15 @@ return()=>{
 },[])
 
 
-    const userInfo={
-        googleLogin,
-        createUser,
-        login,
-        user,
-        loading,
-        logout,
-
-    }
+    const userInfo = {
+      googleLogin,
+      createUser,
+      login,
+      user,
+      loading,
+      logout,
+      uptadeteuser
+    };
 
 
 

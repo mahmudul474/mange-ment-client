@@ -1,6 +1,6 @@
 export const Baner = () => {
     return (
-      <div className="relative">
+      <div className="relative  z-0">
         <img
           src="https://images.pexels.com/photos/3747463/pexels-photo-3747463.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
           className="absolute inset-0 object-cover w-full h-full"

@@ -19,7 +19,7 @@ event.preventDefault()
  const location=from.location.value;
  const messege=from.text.value
 
- console.log(email,phoneNumber,location,messege);
+
 
 const order={
     product:_id,
@@ -31,7 +31,7 @@ const order={
     messege
 }
 
-fetch("https://y-five-livid.vercel.app/orders",{
+fetch("http://localhost:5000/orders",{
     method: "POST",
     headers:{
         "Content-Type":"application/json"

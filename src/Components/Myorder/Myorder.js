@@ -4,24 +4,38 @@ import { UserContext } from '../../Context/Authcontext';
 import OrderRow from './OrderRow';
 
 const Myorder = () => {
- const {user}=useContext(UserContext)
+ const { user, logout } = useContext(UserContext);
 const [orders,serOrders]=useState([])
+console.log(orders)
 
 
 useEffect(()=>{
-    fetch(`https://y-five-livid.vercel.app/orders?email=${user?.email}`)
-    .then(res=>res.json())
-    .then(data=>{
-        serOrders(data)
-
+    fetch(`http://localhost:5000/orders?email=${user?.email}`, {
+        method: 'GET',
+  
+      headers: {
+        authorization:`bearer ${localStorage.getItem("token")}`,
+      }
     })
+      .then((res) =>{
+        if(res.status===401 || res.status===403){
+        alert("your token has expired. Please logout and login again")
+           return logout();
+          
+
+        }
+        return res.json();
+      })
+      .then((data) => {
+        serOrders(data);
+      });
 
 },[user?.email])
 
 
 
 const handleDelete=(id)=>{
-    fetch(`https://y-five-livid.vercel.app/orders/${id}`,{
+    fetch(`http://localhost:5000/orders/${id}`,{
         method: 'DELETE'
     }).then(res=>res.json())
     .then(data=>{
@@ -40,7 +54,7 @@ const handleDelete=(id)=>{
 
 
 const handleuptgrade=(id)=>{
-    fetch(`https://y-five-livid.vercel.app/orders/${id}`,{
+    fetch(`http://localhost:5000/orders/${id}`,{
         method: 'PATCH',
         headers:{
             'Content-Type': 'application/json'
@@ -50,11 +64,15 @@ const handleuptgrade=(id)=>{
             status: 'APPROVED',
         })
 
-    }).then(res=>res.json())
+    }).then(res=>{
+         if (res.status === 401 || res.status === 403) {
+           return alert("kicu ekta somossa")
+         }
+        return res.json()
+    })
     .then(data=>{
         console.log(data)
         if(data.modifiedCount>0){
-        
            const remeningUpd=orders.filter(odr=>odr._id !== id)
            const upd=orders.find(odr=>odr._id===id)
            upd.status='APPROVED'
