@@ -1,9 +1,11 @@
 import Order from "../Components/creatOrder/Order";
 import Myorder from "../Components/Myorder/Myorder";
 import Layot from "../Layot/Layot";
+import AddEng from "../Pages/AdminDahbord/AddEngineyar/AddEng";
 import Allorders from "../Pages/AdminDahbord/All-oders/Allorders";
 import Alluser from "../Pages/AdminDahbord/All_User/Alluser";
 import Dashbord from "../Pages/AdminDahbord/Dahsbord/Dashbord";
+import ManageEinginier from "../Pages/AdminDahbord/ManageEnginier/ManageEinginier";
 import Home from "../Pages/Home/Home";
 import Login from "../Pages/User/Login";
 import Register from "../Pages/User/Register";
@@ -65,7 +67,6 @@ const router = createBrowserRouter([
         path: "/dashboard",
         element: (
           <Private>
-            
             <AdminRout>
               <Dashbord></Dashbord>
             </AdminRout>
@@ -85,6 +86,22 @@ const router = createBrowserRouter([
             element: (
               <AdminRout>
                 <Alluser></Alluser>
+              </AdminRout>
+            )
+          },
+          {
+            path: "/dashboard/addEng",
+            element: (
+              <AdminRout>
+                <AddEng></AddEng>
+              </AdminRout>
+            )
+          },
+          {
+            path: "/dashboard/manageEng",
+            element: (
+              <AdminRout>
+                <ManageEinginier></ManageEinginier>
               </AdminRout>
             )
           }
