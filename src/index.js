@@ -1,18 +1,27 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import Authcontext from './Context/Authcontext';
-import { Toaster } from 'react-hot-toast';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import Authcontext from "./Context/Authcontext";
+import { Toaster } from "react-hot-toast";
+import {
+  QueryClient,
+  QueryClientProvider,
+  useQuery
+} from "@tanstack/react-query";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const queryClient = new QueryClient();
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-   <Authcontext>
-   <App />
-   <Toaster />
-   </Authcontext>
+    <QueryClientProvider client={queryClient}>
+      <Authcontext>
+        <App />
+        <Toaster />
+      </Authcontext>
+    </QueryClientProvider>
   </React.StrictMode>
 );
 
