@@ -6,7 +6,7 @@ const Fiuture = () => {
 console.log(futurs)
  useEffect(()=>{
 
-    fetch("http://localhost:5000/cars")
+    fetch("https://y-devsobuj910.vercel.app/cars")
     .then(res=>res.json())
     .then(data=>setFuturs(data))
  },[])

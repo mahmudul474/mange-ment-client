@@ -12,7 +12,7 @@ const AddEng = () => {
   const { data: enginiyerType = [], isLoading } = useQuery({
     queryKey: ["enginiyerType"],
     queryFn: async () => {
-      const res = await fetch("http://localhost:5000/servicEnginer");
+      const res = await fetch("https://y-devsobuj910.vercel.app/servicEnginer");
       const data = await res.json();
       return data;
     }
@@ -53,7 +53,7 @@ const AddEng = () => {
   };
 
   const savedEng = (enginer) => {
-    fetch("http://localhost:5000/servicEnginer", {
+    fetch("https://y-devsobuj910.vercel.app/servicEnginer", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

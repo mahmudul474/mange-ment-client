@@ -1,4 +1,5 @@
 import Order from "../Components/creatOrder/Order";
+
 import Myorder from "../Components/Myorder/Myorder";
 import Layot from "../Layot/Layot";
 import AddEng from "../Pages/AdminDahbord/AddEngineyar/AddEng";
@@ -44,7 +45,7 @@ const router = createBrowserRouter([
             <CarDittails></CarDittails>
           </Private>
         ),
-        loader: ({ params }) => fetch(`http://localhost:5000/cars/${params.id}`)
+        loader: ({ params }) => fetch(`https://y-devsobuj910.vercel.app/cars/${params.id}`)
       },
       {
         path: "/order/:id",
@@ -53,7 +54,7 @@ const router = createBrowserRouter([
             <Order></Order>
           </Private>
         ),
-        loader: ({ params }) => fetch(`http://localhost:5000/cars/${params.id}`)
+        loader: ({ params }) => fetch(`https://y-devsobuj910.vercel.app/cars/${params.id}`)
       },
       {
         path: "/orders",
@@ -108,7 +109,8 @@ const router = createBrowserRouter([
         ]
       }
     ]
-  }
+  },
+  
 ]);
 
 export default router;

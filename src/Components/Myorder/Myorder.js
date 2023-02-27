@@ -10,7 +10,7 @@ console.log(orders)
 
 
 useEffect(()=>{
-    fetch(`http://localhost:5000/orders?email=${user?.email}`, {
+    fetch(`https://y-devsobuj910.vercel.app/orders?email=${user?.email}`, {
         method: 'GET',
   
       headers: {
@@ -35,7 +35,7 @@ useEffect(()=>{
 
 
 const handleDelete=(id)=>{
-    fetch(`http://localhost:5000/orders/${id}`,{
+    fetch(`https://y-devsobuj910.vercel.app/orders/${id}`,{
         method: 'DELETE'
     }).then(res=>res.json())
     .then(data=>{
@@ -54,7 +54,7 @@ const handleDelete=(id)=>{
 
 
 const handleuptgrade=(id)=>{
-    fetch(`http://localhost:5000/orders/${id}`,{
+    fetch(`https://y-devsobuj910.vercel.app/orders/${id}`,{
         method: 'PATCH',
         headers:{
             'Content-Type': 'application/json'

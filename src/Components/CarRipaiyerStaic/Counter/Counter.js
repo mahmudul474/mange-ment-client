@@ -1,31 +1,37 @@
 import React from 'react';
+ 
+
 
 const Counter = () => {
   return (
-    <div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
-      <div class="text-center md:border-r">
-        <h6 class="text-4xl font-bold lg:text-5xl xl:text-6xl">144K</h6>
-        <p class="text-sm font-medium tracking-widest text-gray-800 uppercase lg:text-base">
-          Downloads
-        </p>
+    <div class=" grid lg:grid-cols-2 grid-cols-1 md:grid-cols-2 gap-1">
+      <div className="flex items-center   ">
+        <h1 className="text-3xl font font-bold ">2.9K</h1>
+       
+        <h3 className="text-xl  capitalize ">
+          Vehicle  Repaired
+        </h3>
       </div>
-      <div class="text-center md:border-r">
-        <h6 class="text-4xl font-bold lg:text-5xl xl:text-6xl">12.9K</h6>
-        <p class="text-sm font-medium tracking-widest text-gray-800 uppercase lg:text-base">
-          Subscribers
-        </p>
+
+      <div className="flex items-center my-5  ">
+        <h1 className="text-3xl font font-bold mr-1 ">5</h1>
+       
+        <h3 className="text-xl  capitalize ">
+          Years of
+           experience
+        </h3>
       </div>
-      <div class="text-center md:border-r">
-        <h6 class="text-4xl font-bold lg:text-5xl xl:text-6xl">48.3K</h6>
-        <p class="text-sm font-medium tracking-widest text-gray-800 uppercase lg:text-base">
-          Users
-        </p>
+
+      <div className="flex items-center   ">
+        <h1 className="text-3xl font font-bold ">2K</h1>
+       
+        <h3 className="text-xl  capitalize ">Pellentesque tincidunt</h3>
       </div>
-      <div class="text-center">
-        <h6 class="text-4xl font-bold lg:text-5xl xl:text-6xl">24.5K</h6>
-        <p class="text-sm font-medium tracking-widest text-gray-800 uppercase lg:text-base">
-          Cookies
-        </p>
+
+      <div className="flex items-center   ">
+        <h1 className="text-3xl font font-bold ">32</h1>
+       
+        <h3 className="text-xl  capitalize ">Silencer Coating</h3>
       </div>
     </div>
   );

@@ -32,7 +32,7 @@ const Baner = () => {
           <div className="flex items-center">
       
             <HashLink smooth to="/#services">
-             <button className="btn ">Make A Apoinemts</button>
+             <button className="btn ">Get a Service</button>
             </HashLink>
           </div>
         </div>

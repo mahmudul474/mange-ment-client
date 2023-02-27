@@ -11,7 +11,7 @@ const ManageEinginier = () => {
   } = useQuery({
     queryKey: ["allEngenier"],
     queryFn: async () => {
-      const res = await fetch("http://localhost:5000/Enginer", {
+      const res = await fetch("https://y-devsobuj910.vercel.app/Enginer", {
         headers: {
           authorization: `bearer ${localStorage.getItem("token")}`
         }
@@ -26,7 +26,7 @@ const ManageEinginier = () => {
     const agree = window.confirm(`Are you sure you ${id} want to delete`);
 
     if (agree) {
-      fetch(`http://localhost:5000/enginier/${id}`, {
+      fetch(`https://y-devsobuj910.vercel.app/enginier/${id}`, {
         method: "DELETE",
         headers: {
           authorization: `bearer ${localStorage.getItem("token")}`

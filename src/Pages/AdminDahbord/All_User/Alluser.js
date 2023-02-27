@@ -16,7 +16,7 @@ console.log(isadmin)
   const { data: allusers = [], refetch } = useQuery({
     queryKey: ["allusers"],
     queryFn: async () => {
-      const res = await fetch("http://localhost:5000/users");
+      const res = await fetch("https://y-devsobuj910.vercel.app/users");
       const data = res.json();
       return data;
     }
@@ -25,7 +25,7 @@ console.log(isadmin)
   ////make admin
 
   const handleAdmin = (id) => {
-    fetch(`http://localhost:5000/users/admin/${id}`, {
+    fetch(`https://y-devsobuj910.vercel.app/users/admin/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

@@ -26,7 +26,7 @@ const Sociallogin = () => {
       name
     };
 
-    fetch(`http://localhost:5000/users/${email}`, {
+    fetch(`https://y-devsobuj910.vercel.app/users/${email}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json"

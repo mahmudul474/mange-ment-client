@@ -44,14 +44,16 @@ const Header = () => {
             </Link>
           </li>
           <li>
-            {isadmin=== true ?
+            {isadmin === true ? (
               <Link
                 to="/dashboard"
                 className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
               >
                 Dashbord
-              </Link>:""
-            }
+              </Link>
+            ) : (
+              ""
+            )}
           </li>
 
           <li>
@@ -68,6 +70,9 @@ const Header = () => {
             ) : (
               ""
             )}
+          </li>
+          <li>
+            <Link to="/masegeDashbodrd"> massege</Link>
           </li>
 
           <li>

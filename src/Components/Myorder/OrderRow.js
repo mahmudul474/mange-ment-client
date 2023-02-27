@@ -8,7 +8,7 @@ const OrderRow = ({order,handleDelete,handleuptgrade}) => {
 
 useEffect(()=>{
 
-    fetch(`http://localhost:5000/cars/${product}`)
+    fetch(`https://y-devsobuj910.vercel.app/cars/${product}`)
     .then(res=>res.json())
     .then(data=>{
         console.log(data.img)

@@ -31,7 +31,7 @@ const order={
     messege
 }
 
-fetch("http://localhost:5000/orders",{
+fetch("https://y-devsobuj910.vercel.app/orders",{
     method: "POST",
     headers:{
         "Content-Type":"application/json"
