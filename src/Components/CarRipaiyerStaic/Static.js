@@ -18,7 +18,7 @@ const Static = () => {
                 with our work.
               </p>
             </div>
-            <div className="">
+            <div className="hidden lg:block md:block">
           
 
 

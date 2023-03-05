@@ -16,7 +16,9 @@ console.log(futurs)
       <div className="lg:my-20  " id="services">
         <div className="my-8">
           <span className="text-md">Check out our Populer services</span>
-          <h2 className="text-5xl  ">-Services We Provide</h2>
+          <h2 className="text-4xl font-bold capitalize ">
+            -Services We Provide
+          </h2>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-9">
