@@ -17,11 +17,10 @@ const Home = () => {
            <Facelity></Facelity>
            <Proces></Proces>
             <Fiuture></Fiuture>
-           <Work></Work>
+            <Work></Work>
             <Static></Static>
+            <Proces></Proces>
             <Team></Team>
-            
-
         </div>
     );
 };
