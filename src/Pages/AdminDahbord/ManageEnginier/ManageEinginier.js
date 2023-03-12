@@ -50,7 +50,7 @@ const ManageEinginier = () => {
 
   return (
     <div>
-      <h1 className="capitalize text-xl  font-bold my-3"> manage enginier</h1>
+      <h1 className="capitalize text-xl  font-bold my-3"> manage Teacher</h1>
 
       <div className="p-14 m-auto">
         <div className="overflow-x-auto">
@@ -60,7 +60,7 @@ const ManageEinginier = () => {
                 <th>index</th>
                 <th>Photo</th>
                 <th>Name</th>
-                <th>Speciyalty</th>
+              
                 <th>Email</th>
                 <th>Delet</th>
               </tr>
@@ -73,7 +73,6 @@ const ManageEinginier = () => {
                     <img className="w-14 h-14 rounded-full" src={eng.image} alt="enginer" />
                   </td>
                   <td>{eng.name}</td>
-                  <td>{eng.type}</td>
                   <td>{eng.email}</td>
                   <td>
                     <button

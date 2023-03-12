@@ -35,14 +35,7 @@ const Header = () => {
 
       {user?.uid ? (
         <>
-          <li>
-            <Link
-              to="/orders"
-              className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
-            >
-              Orders
-            </Link>
-          </li>
+         
           <li>
             {isadmin === true ? (
               <Link
@@ -63,17 +56,13 @@ const Header = () => {
             </Link>
           </li>
           <li className="bg-none hover:bg-none">
-            {user?.photoURL ? (
+            {user?.photoURL&& (
               <div className="">
                 <img className="rounded-full w-10 h-10" src={user?.photoURL} />
               </div>
-            ) : (
-              ""
-            )}
+            ) }
           </li>
-          <li>
-            <Link to="/masegeDashbodrd"> massege</Link>
-          </li>
+         
 
           <li>
             <button

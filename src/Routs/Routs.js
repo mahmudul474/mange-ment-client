@@ -2,10 +2,13 @@ import Order from "../Components/creatOrder/Order";
 
 import Myorder from "../Components/Myorder/Myorder";
 import Layot from "../Layot/Layot";
+import Blog from "../Pages/AdminDahbord/Add-blog/Blog";
+import Addcours from "../Pages/AdminDahbord/Addcours/Addcours";
 import AddEng from "../Pages/AdminDahbord/AddEngineyar/AddEng";
 import Allorders from "../Pages/AdminDahbord/All-oders/Allorders";
 import Alluser from "../Pages/AdminDahbord/All_User/Alluser";
 import Dashbord from "../Pages/AdminDahbord/Dahsbord/Dashbord";
+import Mangebanner from "../Pages/AdminDahbord/Dahsbord/ManageHomeb/Mangebanner";
 import ManageEinginier from "../Pages/AdminDahbord/ManageEnginier/ManageEinginier";
 import Home from "../Pages/Home/Home";
 import Login from "../Pages/User/Login";
@@ -45,25 +48,10 @@ const router = createBrowserRouter([
             <CarDittails></CarDittails>
           </Private>
         ),
-        loader: ({ params }) => fetch(`https://y-devsobuj910.vercel.app/cars/${params.id}`)
+        loader: ({ params }) =>
+          fetch(`https://y-devsobuj910.vercel.app/cars/${params.id}`)
       },
-      {
-        path: "/order/:id",
-        element: (
-          <Private>
-            <Order></Order>
-          </Private>
-        ),
-        loader: ({ params }) => fetch(`https://y-devsobuj910.vercel.app/cars/${params.id}`)
-      },
-      {
-        path: "/orders",
-        element: (
-          <Private>
-            <Myorder></Myorder>
-          </Private>
-        )
-      },
+
       {
         path: "/dashboard",
         element: (
@@ -78,22 +66,6 @@ const router = createBrowserRouter([
             path: "/dashboard",
             element: (
               <AdminRout>
-                <Allorders></Allorders>
-              </AdminRout>
-            )
-          },
-          {
-            path: "/dashboard/allusers",
-            element: (
-              <AdminRout>
-                <Alluser></Alluser>
-              </AdminRout>
-            )
-          },
-          {
-            path: "/dashboard/addEng",
-            element: (
-              <AdminRout>
                 <AddEng></AddEng>
               </AdminRout>
             )
@@ -105,12 +77,33 @@ const router = createBrowserRouter([
                 <ManageEinginier></ManageEinginier>
               </AdminRout>
             )
+          },
+          {
+            path: "/dashboard/addcours",
+            element: (
+              <AdminRout>
+                <Addcours></Addcours>
+              </AdminRout>
+            )
+          },
+          {
+            path: "/dashboard/addblock",
+            element: (
+              <AdminRout>
+                <Blog></Blog>
+              </AdminRout>
+            )
+          },
+          {
+            path: "/dashboard/homebanner",
+            element:<AdminRout>
+              <Mangebanner></Mangebanner>
+            </AdminRout>
           }
         ]
       }
     ]
-  },
-  
+  }
 ]);
 
 export default router;

@@ -9,21 +9,14 @@ const AddEng = () => {
   const imageHostKey = process.env.REACT_APP_IMAGE_HOSTKEY;
   const [eror, serEror] = useState("");
   ///enginiyerType
-  const { data: enginiyerType = [], isLoading } = useQuery({
-    queryKey: ["enginiyerType"],
-    queryFn: async () => {
-      const res = await fetch("https://y-devsobuj910.vercel.app/servicEnginer");
-      const data = await res.json();
-      return data;
-    }
-  });
+ 
 
   const handeleEngier = (event) => {
     event.preventDefault();
     const from = event.target;
     const name = from.name.value;
     const email = from.email.value;
-    const enginerType = from.enginerType.value;
+   
     const image = from.image.files[0];
 
     const fromdata = new FormData();
@@ -41,7 +34,7 @@ const AddEng = () => {
         const EnagierInfo = {
           name: name,
           email: email,
-          type: enginerType,
+       
           image: iamgedata.data.display_url
         };
 
@@ -75,14 +68,12 @@ const AddEng = () => {
       });
   };
 
-  if (isLoading) {
-    return <Loding></Loding>;
-  }
+  
 
   return (
     <div className="w-1/3  m-auto my-6">
       <h2 className="text-xl font-bold capitalize  my-3">
-        Add Special Eneginer
+        Add Special  Teacher
       </h2>
 
       <form onSubmit={handeleEngier} className="mb-10">
@@ -114,21 +105,7 @@ const AddEng = () => {
             name="email"
           />
         </div>
-        <div className="mb-1 sm:mb-2">
-          <label htmlFor="enginer" className="block text-left mb-1 font-medium">
-            select youre Type
-          </label>
-          <select
-            name="enginerType"
-            className="select select-bordered flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"
-          >
-            {enginiyerType.map((eng) => (
-              <option name="enginerType" key={eng._id} value={eng.title}>
-                {eng.title}
-              </option>
-            ))}
-          </select>
-        </div>
+       
 
         <div className="mb-1 sm:mb-2">
           <label htmlFor="image" className="block text-left mb-1 font-medium">
